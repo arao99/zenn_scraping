@@ -10,6 +10,6 @@ html = URI.open(url).read
 doc = Nokogiri::HTML.parse(html)
 
 # ニュースの見出しを取得して出力する
-doc.at_css('section#tabpanelTopics1 ul').css('h1').each do |h1|
+doc.at_css('section#tabpanelTopics1 ul').css('h1').each {|h1|
   puts h1.text.strip
-end
+}
